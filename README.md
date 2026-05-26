@@ -13,7 +13,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/chainepic/MotionaryUI-UX?style=for-the-badge&logo=github)](https://github.com/chainepic/MotionaryUI-UX)
 
-[English](#english) · [中文](#中文) · [Live Demo](#-live-demo--在线预览) · [Quick Start](#-quick-start--快速开始)
+[English](#highlights--项目亮点) · [中文](#highlights--项目亮点) · [Live Demo](#-live-demo--在线预览) · [Quick Start](#-quick-start--快速开始)
 
 <br />
 
