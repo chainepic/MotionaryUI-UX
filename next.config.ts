@@ -12,6 +12,7 @@ if (isGithubActions) {
 
 const nextConfig: NextConfig = {
   output: 'export',
+  trailingSlash: true, // Fix for 403 errors on static hosts
   images: {
     unoptimized: true,
   },

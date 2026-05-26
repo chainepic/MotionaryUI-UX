@@ -58,3 +58,7 @@ logs
 # Temp
 tmp/
 temp/
+
+# Internal docs (not for public repo)
+motionaryproject.md
+motionary-style-guide.md

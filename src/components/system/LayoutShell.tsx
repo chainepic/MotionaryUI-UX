@@ -11,11 +11,11 @@ export const LayoutShell = ({ children }: LayoutShellProps) => {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black cursor-none">
       <CustomCursor />
       <Sidebar />
-      <main className="pl-64 min-h-screen relative">
+      <main className="lg:pl-64 min-h-screen relative transition-all duration-300">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
         
-        <div className="p-12 max-w-[1920px] mx-auto relative z-10">
+        <div className="p-6 md:p-12 max-w-[1920px] mx-auto relative z-10">
           {children}
         </div>
       </main>

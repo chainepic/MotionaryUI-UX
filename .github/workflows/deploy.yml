@@ -20,40 +20,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
-          cache-dependency-path: motionary/package-lock.json
-      
+          cache: "npm"
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-      
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
-          path: |
-            motionary/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('motionary/package-lock.json') }}-${{ hashFiles('motionary/src/**/*') }}
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**/*') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('motionary/package-lock.json') }}-
-      
+            ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-
+
       - name: Install dependencies
-        working-directory: ./motionary
         run: npm ci
-      
+
       - name: Build with Next.js
-        working-directory: ./motionary
         run: npm run build
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./motionary/out
+          path: ./out
 
   deploy:
     environment:
@@ -65,4 +61,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

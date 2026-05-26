@@ -1,7 +1,7 @@
 {
   "name": "motionary",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,8 +19,8 @@
     "lucide-react": "^0.462.0",
     "maath": "^0.10.8",
     "next": "16.0.5",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "tailwind-merge": "^2.5.5",
     "three": "^0.170.0",
     "zustand": "^5.0.1"

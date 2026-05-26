@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, SkipForward, SkipBack, Mic, Radio, Disc, Music, Maximize2, Cast, Airplay, List, Repeat, Shuffle } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, SkipForward as SkipForwardIcon, SkipBack, Mic, Radio, Disc, Music, Maximize2, Cast, Airplay, List, Repeat, Shuffle } from 'lucide-react';
 
 // 1. Play/Pause Morph
 export const PlayPauseMorph = () => {
@@ -276,3 +276,261 @@ export const CDInsert = () => (
     </div>
 );
 
+
+// WaveformVisualizer
+export const WaveformVisualizer = () => (
+    <div className="flex gap-1 items-center h-12">
+      {[...Array(10)].map((_, i) => (
+        <div key={i} className="w-1 bg-pink-500 rounded-full animate-[wave_1s_ease-in-out_infinite]" style={{ height: '20%', animationDelay: `${i * 0.1}s` }} />
+      ))}
+    </div>
+);
+
+// VinylSpinLP
+export const VinylSpinLP = () => (
+    <div className="w-24 h-24 rounded-full bg-black border-4 border-zinc-800 flex items-center justify-center animate-[spin_4s_linear_infinite] shadow-xl relative">
+      <div className="w-8 h-8 bg-red-500 rounded-full border-2 border-white z-10" />
+      <div className="absolute inset-0 rounded-full bg-[repeating-radial-gradient(#333_0,#333_2px,#000_3px,#000_4px)] opacity-50" />
+    </div>
+);
+
+// CassetteLoop
+export const CassetteLoop = () => (
+    <div className="w-32 h-20 bg-zinc-800 rounded border-2 border-zinc-600 flex items-center justify-center gap-4 px-4 relative overflow-hidden">
+      <div className="w-8 h-8 rounded-full border-4 border-white animate-[spin_2s_linear_infinite]" />
+      <div className="w-8 h-8 rounded-full border-4 border-white animate-[spin_2s_linear_infinite]" />
+      <div className="absolute top-2 left-2 text-[8px] text-zinc-500">C-60</div>
+    </div>
+);
+
+// EqualizerSpectrum
+export const EqualizerSpectrum = () => (
+    <div className="flex items-end gap-0.5 h-16 w-32 bg-black p-2 rounded">
+      {[...Array(12)].map((_, i) => (
+        <div key={i} className="flex-1 bg-gradient-to-t from-green-500 to-red-500 animate-[equalizer_0.8s_infinite]" style={{ height: `${Math.random() * 100}%`, animationDelay: `${Math.random()}s` }} />
+      ))}
+    </div>
+);
+
+// PlayPauseMorphBtn
+export const PlayPauseMorphBtn = () => (
+    <button className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group hover:scale-110 transition-transform">
+      <div className="w-4 h-5 border-l-4 border-r-4 border-black group-hover:h-4 group-hover:w-4 group-hover:border-0 group-hover:bg-black transition-all duration-300 clip-path-polygon-[0_0,100%_50%,0_100%]" />
+      {/* Note: Complex morphs usually need SVG paths. This is a CSS approximation swap */}
+      <svg className="w-6 h-6 absolute opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24"><path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    </button>
+);
+
+// VolumeKnobTurn
+export const VolumeKnobTurn = () => (
+    <div className="w-20 h-20 rounded-full bg-zinc-200 border-4 border-zinc-300 shadow-inner flex items-center justify-center cursor-grab active:cursor-grabbing transform rotate-45 active:rotate-90 transition-transform duration-200">
+      <div className="w-2 h-2 bg-black rounded-full mb-12" />
+    </div>
+);
+
+// ScrubberHover
+export const ScrubberHover = () => (
+    <div className="w-64 h-8 flex items-center group cursor-pointer">
+      <div className="w-full h-1 bg-zinc-700 rounded-full relative">
+        <div className="absolute top-0 left-0 h-full w-1/3 bg-red-600 rounded-full" />
+        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full scale-0 group-hover:scale-100 transition-transform" />
+        <div className="absolute -top-6 left-1/3 -translate-x-1/2 bg-black text-white text-[10px] px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">0:45</div>
+      </div>
+    </div>
+);
+
+// MuteToggleIcon
+export const MuteToggleIcon = () => (
+    <button className="p-2 rounded-full hover:bg-zinc-800 text-white group">
+      <div className="relative w-6 h-6">
+        <svg className="w-6 h-6 absolute transition-opacity group-hover:opacity-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+        <svg className="w-6 h-6 absolute opacity-0 group-hover:opacity-100 transition-opacity text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+      </div>
+    </button>
+);
+
+// AlbumTilt
+export const AlbumTilt = () => (
+    <div className="w-32 h-32 perspective-500 group">
+      <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 rounded shadow-xl transform transition-transform duration-500 group-hover:rotate-y-12 group-hover:rotate-x-12 flex items-center justify-center text-white font-bold">
+        Album
+      </div>
+    </div>
+);
+
+// LyricsScroll
+export const LyricsScroll = () => (
+    <div className="h-32 w-48 overflow-hidden relative mask-linear-fade">
+      <div className="flex flex-col gap-4 text-center animate-[scroll-up_5s_linear_infinite]">
+        <p className="text-zinc-500">Verse 1 line 1</p>
+        <p className="text-white scale-110 font-bold">Chorus line highlight</p>
+        <p className="text-zinc-500">Verse 2 line 1</p>
+        <p className="text-zinc-500">Verse 2 line 2</p>
+        <p className="text-zinc-500">Verse 2 line 3</p>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 pointer-events-none" />
+    </div>
+);
+
+// PodcastPulse
+export const PodcastPulse = () => (
+    <div className="relative w-16 h-24 flex items-center justify-center">
+      <div className="absolute inset-0 bg-pink-500/30 rounded-full animate-ping" />
+      <div className="w-12 h-20 bg-zinc-800 border-2 border-zinc-600 rounded-full flex items-center justify-center z-10">
+        <div className="w-8 h-16 border-2 border-zinc-500 rounded-full grid grid-rows-6 gap-1 p-1">
+          {[...Array(6)].map((_,i)=> <div key={i} className="w-full h-0.5 bg-zinc-500" />)}
+        </div>
+      </div>
+    </div>
+);
+
+// NowPlayingMarquee
+export const NowPlayingMarquee = () => (
+    <div className="w-48 overflow-hidden bg-black text-green-400 font-mono text-sm py-1 border border-green-900 rounded">
+      <div className="animate-[marquee_5s_linear_infinite] whitespace-nowrap">
+        Song Title - Artist Name  ///  Song Title - Artist Name
+      </div>
+    </div>
+);
+
+// PiPFloat
+export const PiPFloat = () => (
+    <div className="w-full h-32 relative bg-zinc-900 rounded-lg border border-zinc-800 group">
+      <div className="absolute bottom-2 right-2 w-24 h-16 bg-blue-900 rounded border border-blue-500 shadow-lg group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform cursor-move">
+        <div className="w-full h-full flex items-center justify-center text-[8px] text-white">Floating</div>
+      </div>
+    </div>
+);
+
+// TheatreExpand
+export const TheatreExpand = () => (
+    <div className="w-32 h-20 bg-black rounded border border-zinc-700 transition-all duration-500 group-hover:w-64 group-hover:h-32 flex items-center justify-center text-zinc-500 group-hover:text-white">
+      <span className="group-hover:hidden">Small</span>
+      <span className="hidden group-hover:inline">Theatre Mode</span>
+    </div>
+);
+
+// BufferingSpinner
+export const BufferingSpinner = () => (
+    <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+);
+
+// CaptionFloat
+export const CaptionFloat = () => (
+    <div className="relative w-48 h-32 bg-black rounded overflow-hidden group">
+      <img src="https://picsum.photos/200/150" className="opacity-50" />
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-2 py-1 rounded text-white text-xs whitespace-nowrap translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+        [Music playing]
+      </div>
+    </div>
+);
+
+// LiveStreamBadge
+export const LiveStreamBadge = () => (
+    <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white rounded text-xs font-bold uppercase tracking-wider">
+      <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+      Live
+    </div>
+);
+
+// PlaylistShuffle
+export const PlaylistShuffle = () => (
+    <div className="flex flex-col gap-1 w-32 relative h-24 overflow-hidden">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="w-full h-6 bg-zinc-800 rounded border border-zinc-700 animate-[shuffle_2s_infinite]" style={{ animationDelay: `${i * 0.2}s` }} />
+      ))}
+    </div>
+);
+
+// SpeakerVibrate
+export const SpeakerVibrate = () => (
+    <div className="w-24 h-32 bg-zinc-900 rounded-lg border border-zinc-700 flex flex-col items-center justify-center gap-4 animate-[vibrate_0.2s_infinite]">
+      <div className="w-12 h-12 bg-zinc-800 rounded-full border-4 border-zinc-700" />
+      <div className="w-16 h-16 bg-zinc-800 rounded-full border-4 border-zinc-700" />
+    </div>
+);
+
+// RecordArmMove
+export const RecordArmMove = () => (
+    <div className="w-24 h-24 bg-zinc-900 rounded relative overflow-hidden group">
+      <div className="w-20 h-20 rounded-full bg-black border-2 border-zinc-700 m-2 animate-spin" />
+      <div className="absolute top-2 right-2 w-1 h-12 bg-zinc-400 origin-top transform rotate-[-30deg] group-hover:rotate-[10deg] transition-transform duration-500" />
+    </div>
+);
+
+// SoundWaveBars
+export const SoundWaveBars = () => (
+    <div className="flex items-center gap-0.5 h-10">
+      {[...Array(20)].map((_, i) => (
+        <div key={i} className="w-0.5 bg-blue-500 animate-[soundwave_1s_ease-in-out_infinite]" style={{ height: `${Math.random() * 100}%`, animationDelay: `${Math.random()}s` }} />
+      ))}
+    </div>
+);
+
+// VideoThumbnailPlay
+export const VideoThumbnailPlay = () => (
+    <div className="w-32 h-20 bg-zinc-800 rounded relative overflow-hidden group cursor-pointer">
+      <img src="https://picsum.photos/150/100" className="opacity-60 group-hover:opacity-40 transition-opacity" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center transition-transform group-hover:scale-125">
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[8px] border-l-white border-b-[4px] border-b-transparent ml-0.5" />
+        </div>
+      </div>
+    </div>
+);
+
+// CastConnecting
+export const CastConnecting = () => (
+    <div className="flex flex-col items-center gap-2">
+      <svg className="w-8 h-8 text-blue-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+      <span className="text-[10px] text-zinc-500 animate-pulse">Connecting to TV...</span>
+    </div>
+);
+
+// RecordingDot
+export const RecordingDot = () => (
+    <div className="flex items-center gap-2 px-3 py-1 bg-zinc-900 rounded-full border border-zinc-800">
+      <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse" />
+      <span className="text-xs font-mono">REC 00:12</span>
+    </div>
+);
+
+// AudioJack
+export const AudioJack = () => (
+    <div className="w-32 h-10 flex items-center justify-center gap-0 group cursor-pointer">
+      <div className="w-16 h-2 bg-zinc-500 rounded-l" />
+      <div className="w-4 h-4 bg-zinc-400 rounded-r group-hover:translate-x-2 transition-transform duration-200" />
+      <div className="w-4 h-4 rounded-full border-2 border-zinc-600 ml-2 group-hover:border-blue-500 transition-colors" />
+    </div>
+);
+
+// VideoResolution
+export const VideoResolution = () => (
+    <div className="flex gap-1 text-xs font-bold text-zinc-600">
+      <span className="hover:text-white cursor-pointer transition-colors">4K</span>
+      <span className="hover:text-white cursor-pointer transition-colors">HD</span>
+      <span className="text-white border-b-2 border-white">SD</span>
+    </div>
+);
+
+// ClosedCaptions
+export const ClosedCaptions = () => (
+    <div className="w-8 h-6 border-2 border-zinc-500 rounded flex items-center justify-center text-[10px] font-bold text-zinc-500 cursor-pointer hover:border-white hover:text-white hover:bg-white/10 transition-all">
+      CC
+    </div>
+);
+
+// SkipForward
+export const SkipForward = () => (
+    <div className="relative w-10 h-10 flex items-center justify-center cursor-pointer group">
+      <svg className="w-6 h-6 text-white absolute opacity-100 group-hover:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" /></svg>
+      <span className="text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">+15s</span>
+    </div>
+);
+
+// MetronomeTick
+export const MetronomeTick = () => (
+    <div className="w-1 h-16 bg-zinc-700 mx-auto origin-bottom animate-[tick_1s_infinite_alternate_ease-in-out]">
+      <div className="w-4 h-4 bg-white rounded-full -ml-1.5 mt-2" />
+    </div>
+);

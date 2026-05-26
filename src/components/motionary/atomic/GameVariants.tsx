@@ -296,3 +296,204 @@ export const EnemyHealth = () => (
     </div>
 );
 
+
+// XPBarFill
+export const XPBarFill = () => (
+    <div className="w-full h-4 bg-zinc-800 rounded-full overflow-hidden relative group">
+      <div className="h-full bg-gradient-to-r from-yellow-500 to-orange-500 w-3/4 animate-[shimmer_2s_infinite] relative">
+        <div className="absolute inset-0 bg-white/30 skew-x-[-20deg] w-10 animate-[shine_1.5s_infinite]" />
+      </div>
+      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white drop-shadow-md">750 / 1000 XP</span>
+    </div>
+);
+
+// LevelUpBurst
+export const LevelUpBurst = () => (
+    <div className="relative flex items-center justify-center w-24 h-24 group cursor-pointer">
+      <div className="absolute inset-0 bg-yellow-500 rounded-full opacity-20 animate-ping group-hover:animation-none" />
+      <div className="absolute inset-0 bg-yellow-500 rounded-full opacity-20 animate-[ping_1.5s_infinite_delay-300ms]" />
+      <div className="relative z-10 font-black text-2xl text-yellow-400 group-hover:scale-125 transition-transform duration-300">LVL 5</div>
+    </div>
+);
+
+// HealthBarShake
+export const HealthBarShake = () => (
+    <div className="w-48 h-6 bg-zinc-900 border-2 border-zinc-700 rounded relative overflow-hidden group cursor-pointer hover:animate-[shake_0.4s_ease-in-out]">
+      <div className="h-full bg-red-600 w-[30%] transition-all duration-300 group-hover:bg-red-500" />
+      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-white">CRITICAL</span>
+    </div>
+);
+
+// CoinSpin3D
+export const CoinSpin3D = () => (
+    <div className="w-16 h-16 rounded-full bg-yellow-400 border-4 border-yellow-600 flex items-center justify-center text-yellow-700 font-bold text-2xl shadow-lg animate-[spin-y_3s_infinite_linear]">
+      $
+    </div>
+);
+
+// LootBoxShake
+export const LootBoxShake = () => (
+    <div className="text-5xl cursor-pointer hover:animate-[shake_0.5s_infinite] transition-transform active:scale-110">
+      🎁
+    </div>
+);
+
+// CardFlipRPG
+export const CardFlipRPG = () => (
+    <div className="w-32 h-48 perspective-1000 group cursor-pointer">
+      <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+        <div className="absolute w-full h-full bg-indigo-900 rounded-lg border-2 border-indigo-500 flex items-center justify-center backface-hidden">
+          <span className="text-4xl">?</span>
+        </div>
+        <div className="absolute w-full h-full bg-indigo-600 rounded-lg border-2 border-white flex flex-col items-center justify-center backface-hidden rotate-y-180 text-white">
+          <span className="text-4xl mb-2">⚔️</span>
+          <span className="font-bold">Attack</span>
+          <span className="text-sm">+10 DMG</span>
+        </div>
+      </div>
+    </div>
+);
+
+// ManaOrbPulse
+export const ManaOrbPulse = () => (
+    <div className="w-20 h-20 rounded-full bg-blue-500 relative overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.6)] group">
+      <div className="absolute bottom-0 w-full bg-blue-400 animate-[wave_3s_infinite_linear] h-[80%] opacity-80" />
+      <div className="absolute inset-0 rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]" />
+    </div>
+);
+
+// QuestItemHover
+export const QuestItemHover = () => (
+    <div className="w-16 h-16 bg-zinc-800 border-2 border-zinc-600 rounded-lg flex items-center justify-center text-3xl group hover:border-yellow-500 hover:shadow-[0_0_15px_rgba(234,179,8,0.5)] transition-all cursor-pointer relative">
+      📜
+      <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full animate-bounce" />
+    </div>
+);
+
+// CharSelect
+export const CharSelect = () => (
+    <div className="flex gap-2">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="w-16 h-24 bg-zinc-800 rounded-lg border-2 border-transparent hover:border-white hover:-translate-y-2 hover:shadow-xl transition-all cursor-pointer flex items-end justify-center pb-2 overflow-hidden relative group">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="w-8 h-8 rounded-full bg-zinc-600 mb-4 group-hover:scale-110 transition-transform" />
+        </div>
+      ))}
+    </div>
+);
+
+// InventoryDrag
+export const InventoryDrag = () => (
+    <div className="grid grid-cols-2 gap-2 w-32">
+      {[1, 2, 3, 4].map((i) => (
+        <div key={i} className="w-14 h-14 bg-zinc-800/50 border border-zinc-700 rounded flex items-center justify-center hover:bg-zinc-700 cursor-grab active:cursor-grabbing transition-colors">
+          {i === 1 && <span className="text-xl hover:scale-110 transition-transform">🛡️</span>}
+        </div>
+      ))}
+    </div>
+);
+
+// MapMarkerBounce
+export const MapMarkerBounce = () => (
+    <div className="relative w-8 h-8 group cursor-pointer">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-1 bg-black/50 rounded-full filter blur-[1px] group-hover:scale-75 transition-transform" />
+      <svg className="w-8 h-8 text-red-500 absolute bottom-1 left-0 group-hover:translate-y-[-8px] transition-transform duration-300 cubic-bezier(0.175, 0.885, 0.32, 1.275)" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+    </div>
+);
+
+// DailyReward
+export const DailyReward = () => (
+    <div className="flex gap-1">
+      {[1, 2, 3, 4, 5, 6, 7].map((d) => (
+        <div key={d} className={`w-8 h-10 rounded border ${d===7 ? 'border-yellow-500 bg-yellow-500/10' : 'border-zinc-700 bg-zinc-800'} flex items-center justify-center text-xs relative group cursor-pointer`}>
+          {d}
+          {d===7 && <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full animate-ping" />}
+        </div>
+      ))}
+    </div>
+);
+
+// RankBadge
+export const RankBadge = () => (
+    <div className="w-16 h-16 relative flex items-center justify-center group">
+      <div className="absolute inset-0 border-4 border-zinc-700 rounded-full" />
+      <div className="absolute inset-0 border-4 border-blue-500 rounded-full border-t-transparent border-l-transparent -rotate-45 group-hover:rotate-[315deg] transition-transform duration-700" />
+      <span className="font-bold text-xl text-blue-400">IV</span>
+    </div>
+);
+
+// DialogueTyping
+export const DialogueTyping = () => (
+    <div className="w-64 bg-zinc-900 border border-zinc-700 p-3 rounded-lg relative">
+      <div className="absolute -bottom-2 left-4 w-4 h-4 bg-zinc-900 border-b border-r border-zinc-700 transform rotate-45" />
+      <p className="text-sm font-mono text-green-400 overflow-hidden whitespace-nowrap animate-[typing_3s_steps(20)_infinite]">It's dangerous to go alone...</p>
+    </div>
+);
+
+// PowerUpOrb
+export const PowerUpOrb = () => (
+    <div className="w-12 h-12 bg-purple-600 rounded-full blur-md animate-pulse relative flex items-center justify-center cursor-pointer hover:scale-125 transition-transform duration-200">
+      <div className="w-8 h-8 bg-white rounded-full opacity-50" />
+    </div>
+);
+
+// VictoryConfetti
+export const VictoryConfetti = () => (
+    <div className="relative w-full h-32 overflow-hidden flex items-center justify-center">
+      <h2 className="text-3xl font-black text-yellow-400 z-10 drop-shadow-md">VICTORY</h2>
+      {[...Array(10)].map((_,i) => (
+        <div key={i} className="absolute w-2 h-2 bg-random rounded-sm animate-[confetti_2s_infinite]" style={{ left: `${Math.random()*100}%`, animationDelay: `${Math.random()*2}s`, backgroundColor: ['#f00','#0f0','#00f','#ff0'][i%4] }} />
+      ))}
+    </div>
+);
+
+// StartButton
+export const StartButton = () => (
+    <button className="px-8 py-3 bg-green-500 text-black font-black text-xl uppercase tracking-widest skew-x-[-10deg] hover:skew-x-[-20deg] hover:bg-green-400 hover:scale-105 transition-all shadow-[4px_4px_0_rgba(0,0,0,0.5)] hover:shadow-[6px_6px_0_rgba(0,0,0,0.5)]">
+      Start
+    </button>
+);
+
+// ObjectiveList
+export const ObjectiveList = () => (
+    <div className="flex flex-col gap-2 w-48 font-mono text-sm">
+      <div className="flex items-center gap-2 text-zinc-500 line-through decoration-2">
+        <span>☑</span> Find the key
+      </div>
+      <div className="flex items-center gap-2 text-white animate-pulse">
+        <span>☐</span> Defeat the boss
+      </div>
+    </div>
+);
+
+// SavePoint
+export const SavePoint = () => (
+    <div className="w-16 h-16 relative flex items-center justify-center cursor-pointer group">
+      <div className="absolute inset-0 bg-blue-500/20 rotate-45 group-hover:rotate-90 transition-transform duration-1000" />
+      <div className="w-8 h-8 bg-blue-400 rotate-45 shadow-[0_0_15px_#60a5fa]" />
+      <span className="absolute -bottom-6 text-[10px] text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">Saving...</span>
+    </div>
+);
+
+// DamageNumber
+export const DamageNumber = () => (
+    <div className="relative h-20 w-full flex items-center justify-center overflow-hidden">
+      <span className="text-red-500 font-bold text-2xl animate-[float-up_1s_ease-out_infinite] opacity-0 absolute bottom-0">-120</span>
+    </div>
+);
+
+// PortalGate
+export const PortalGate = () => (
+    <div className="w-24 h-32 rounded-full border-4 border-purple-600 bg-black relative overflow-hidden flex items-center justify-center shadow-[0_0_20px_#9333ea]">
+      <div className="absolute inset-0 bg-[conic-gradient(from_0deg,transparent,purple)] animate-[spin_2s_linear_infinite] opacity-50" />
+      <div className="w-full h-full bg-purple-900/20 backdrop-blur-sm z-10" />
+    </div>
+);
+
+// PotionBottle
+export const PotionBottle = () => (
+    <div className="w-10 h-14 bg-white/10 border border-white/30 rounded-b-xl rounded-t-sm relative overflow-hidden cursor-pointer group">
+      <div className="absolute bottom-0 inset-x-0 h-2/3 bg-red-500/80 group-hover:h-full transition-all duration-500 ease-in-out" />
+      <div className="absolute top-1 left-1 w-1 h-8 bg-white/20 rounded-full" />
+    </div>
+);

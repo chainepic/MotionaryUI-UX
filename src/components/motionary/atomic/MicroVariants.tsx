@@ -315,3 +315,269 @@ export const ConfettiBtn = () => (
     </button>
 );
 
+
+// DeleteShred
+export const DeleteShred = () => (
+    <div className="w-10 h-10 text-zinc-400 hover:text-red-500 cursor-pointer overflow-hidden group relative">
+      <svg className="w-6 h-6 absolute top-2 left-2 group-hover:translate-y-10 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      <div className="absolute top-0 w-full h-full flex flex-col justify-end opacity-0 group-hover:opacity-100">
+        <div className="w-full h-1 bg-red-500 animate-[shred_0.5s_infinite]" />
+      </div>
+    </div>
+);
+
+// DownloadProgressBtn
+export const DownloadProgressBtn = () => (
+    <button className="relative w-32 h-10 bg-blue-600 rounded-full overflow-hidden group active:w-10 transition-all duration-300">
+      <span className="absolute inset-0 flex items-center justify-center text-white text-sm font-bold group-active:opacity-0 transition-opacity">Download</span>
+      <div className="absolute inset-0 bg-green-500 w-0 group-hover:w-full transition-all duration-[2s] ease-linear opacity-50" />
+      <svg className="w-5 h-5 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-active:opacity-100 group-active:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+    </button>
+);
+
+// UploadCloudIcon
+export const UploadCloudIcon = () => (
+    <div className="w-12 h-12 bg-zinc-800 rounded-lg flex items-center justify-center group cursor-pointer hover:bg-zinc-700 transition-colors">
+      <div className="relative">
+        <svg className="w-6 h-6 text-zinc-400 group-hover:text-blue-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-1 h-3 bg-blue-400 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-500 rounded-full" />
+      </div>
+    </div>
+);
+
+// SaveCheckMark
+export const SaveCheckMark = () => (
+    <button className="flex items-center gap-2 text-zinc-400 hover:text-green-500 transition-colors group">
+      <div className="w-5 h-5 border-2 border-current rounded-sm flex items-center justify-center">
+        <svg className="w-3 h-3 scale-0 group-focus:scale-100 transition-transform duration-200 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+      </div>
+      <span>Save</span>
+    </button>
+);
+
+// WarningPulseIcon
+export const WarningPulseIcon = () => (
+    <div className="relative w-8 h-8 flex items-center justify-center">
+      <span className="absolute inset-0 bg-yellow-500 rounded-full opacity-25 animate-ping" />
+      <span className="relative text-yellow-500 text-xl font-bold">!</span>
+    </div>
+);
+
+// SuccessConfettiBtn
+export const SuccessConfettiBtn = () => (
+    <button className="bg-green-600 text-white px-4 py-2 rounded shadow-lg active:scale-95 transition-transform relative overflow-hidden group">
+      Success
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        {[...Array(5)].map((_,i) => (
+          <div key={i} className="absolute w-1 h-1 bg-white rounded-full opacity-0 group-focus:opacity-100 group-focus:animate-[confetti_0.5s_ease-out]" style={{ transform: `rotate(${i*72}deg) translate(20px)` }} />
+        ))}
+      </div>
+    </button>
+);
+
+// InfoToastSlide
+export const InfoToastSlide = () => (
+    <div className="w-64 bg-blue-900/20 border border-blue-500/50 p-3 rounded flex gap-3 items-start animate-[slide-in-right_0.5s_ease-out]">
+      <svg className="w-5 h-5 text-blue-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <p className="text-sm text-blue-200">Did you know? You can hover for more details.</p>
+    </div>
+);
+
+// ErrorShakeInput
+export const ErrorShakeInput = () => (
+    <div className="relative group">
+      <input type="text" value="invalid" className="bg-red-900/10 border border-red-500 text-red-400 px-3 py-1 rounded w-32 group-hover:animate-[shake_0.4s_ease-in-out]" readOnly />
+      <span className="absolute right-2 top-1.5 text-red-500 text-xs">✕</span>
+    </div>
+);
+
+// SwitchGooey
+export const SwitchGooey = () => (
+    <label className="relative inline-flex items-center cursor-pointer">
+      <input type="checkbox" className="sr-only peer" />
+      <div className="w-12 h-6 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:duration-500 peer-checked:bg-purple-600 transition-colors after:ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]"></div>
+    </label>
+);
+
+// RadioWaveSelect
+export const RadioWaveSelect = () => (
+    <label className="flex items-center gap-2 cursor-pointer group">
+      <div className="relative w-5 h-5 flex items-center justify-center">
+        <input type="radio" name="wave" className="sr-only peer" />
+        <div className="w-5 h-5 border-2 border-zinc-500 rounded-full peer-checked:border-blue-500 transition-colors" />
+        <div className="absolute w-3 h-3 bg-blue-500 rounded-full scale-0 peer-checked:scale-100 transition-transform duration-300" />
+        <div className="absolute inset-0 border border-blue-500 rounded-full scale-100 opacity-0 peer-checked:animate-ping" />
+      </div>
+      <span className="text-zinc-400 group-hover:text-white">Option A</span>
+    </label>
+);
+
+// CheckboxMorphCheck
+export const CheckboxMorphCheck = () => (
+    <label className="cursor-pointer group">
+      <input type="checkbox" className="sr-only peer" />
+      <div className="w-6 h-6 border-2 border-zinc-500 rounded transition-all duration-300 peer-checked:bg-green-500 peer-checked:border-green-500 peer-checked:rotate-12 flex items-center justify-center">
+        <svg className="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+      </div>
+    </label>
+);
+
+// TogglePillSlide
+export const TogglePillSlide = () => (
+    <div className="bg-zinc-800 p-1 rounded-full inline-flex relative cursor-pointer">
+      <div className="w-1/2 h-full absolute left-0 bg-zinc-600 rounded-full transition-transform duration-300 transform group-hover:translate-x-full" />
+      <span className="px-4 py-1 text-xs z-10 text-white">Off</span>
+      <span className="px-4 py-1 text-xs z-10 text-zinc-400">On</span>
+    </div>
+);
+
+// MenuBurgerX
+export const MenuBurgerX = () => (
+    <button className="w-10 h-10 flex flex-col justify-center items-center gap-1.5 group">
+      <span className="w-6 h-0.5 bg-white transition-all group-hover:rotate-45 group-hover:translate-y-2" />
+      <span className="w-6 h-0.5 bg-white transition-all group-hover:opacity-0" />
+      <span className="w-6 h-0.5 bg-white transition-all group-hover:-rotate-45 group-hover:-translate-y-2" />
+    </button>
+);
+
+// TabSlideUnder
+export const TabSlideUnder = () => (
+    <div className="flex gap-4 border-b border-zinc-700 relative w-fit">
+      <div className="pb-2 text-zinc-400 hover:text-white cursor-pointer">Tab 1</div>
+      <div className="pb-2 text-zinc-400 hover:text-white cursor-pointer">Tab 2</div>
+      <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-blue-500 transition-all duration-300 hover:w-full hover:left-0" />
+    </div>
+);
+
+// PaginationDotJump
+export const PaginationDotJump = () => (
+    <div className="flex gap-2">
+      <div className="w-2 h-2 bg-zinc-600 rounded-full" />
+      <div className="w-2 h-2 bg-white rounded-full animate-bounce" />
+      <div className="w-2 h-2 bg-zinc-600 rounded-full" />
+    </div>
+);
+
+// BreadcrumbHover
+export const BreadcrumbHover = () => (
+    <div className="flex items-center gap-2 text-sm text-zinc-500">
+      <span className="hover:text-white hover:underline cursor-pointer transition-colors">Home</span>
+      <span>/</span>
+      <span className="hover:text-white hover:underline cursor-pointer transition-colors">Section</span>
+    </div>
+);
+
+// SearchExpandBar
+export const SearchExpandBar = () => (
+    <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:w-48 group">
+      <svg className="w-4 h-4 text-zinc-400 min-w-[2rem]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+      <input type="text" placeholder="Search..." className="bg-transparent text-white text-sm outline-none opacity-0 group-hover:opacity-100 transition-opacity w-full pr-4" />
+    </div>
+);
+
+// CopyFeedback
+export const CopyFeedback = () => (
+    <button className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group">
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+      <span className="group-focus:hidden">Copy</span>
+      <span className="hidden group-focus:inline text-green-500">Copied!</span>
+    </button>
+);
+
+// DragHandleDots
+export const DragHandleDots = () => (
+    <div className="w-6 h-10 flex flex-wrap gap-1 p-1 cursor-grab hover:bg-zinc-800 rounded group">
+      {[...Array(6)].map((_,i) => <div key={i} className="w-1 h-1 bg-zinc-500 rounded-full group-hover:bg-zinc-300" />)}
+    </div>
+);
+
+// LikeHeartExplode
+export const LikeHeartExplode = () => (
+    <button className="text-zinc-500 hover:text-red-500 transition-colors group relative">
+      <svg className="w-6 h-6 group-active:scale-125 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+      <div className="absolute inset-0 bg-red-500 rounded-full scale-0 group-active:animate-ping opacity-50" />
+    </button>
+);
+
+// NotificationBellShake
+export const NotificationBellShake = () => (
+    <div className="relative cursor-pointer group">
+      <svg className="w-6 h-6 text-zinc-400 group-hover:text-white group-hover:animate-[wiggle_0.5s_ease-in-out]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+      <div className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full" />
+    </div>
+);
+
+// SortAscDesc
+export const SortAscDesc = () => (
+    <div className="flex items-center gap-1 cursor-pointer text-sm text-zinc-400 hover:text-white group">
+      Sort
+      <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+    </div>
+);
+
+// RatingStarsFill
+export const RatingStarsFill = () => (
+    <div className="flex gap-0.5 group">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <svg key={i} className="w-4 h-4 text-zinc-600 group-hover:text-yellow-400 hover:!text-yellow-400 peer-hover:text-yellow-400 cursor-pointer transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+      ))}
+    </div>
+);
+
+// FilterTagClose
+export const FilterTagClose = () => (
+    <div className="inline-flex items-center gap-1 px-2 py-1 bg-zinc-800 rounded border border-zinc-700 text-xs text-zinc-300 group cursor-pointer hover:border-red-500 hover:text-red-400 transition-colors">
+      <span>Tag</span>
+      <span className="group-hover:rotate-90 transition-transform">✕</span>
+    </div>
+);
+
+// RefreshPull
+export const RefreshPull = () => (
+    <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center cursor-pointer hover:rotate-180 transition-transform duration-500">
+      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+    </div>
+);
+
+// TooltipFadeUp
+export const TooltipFadeUp = () => (
+    <div className="relative inline-block group">
+      <span className="border-b border-dashed border-zinc-500 cursor-help">Hover</span>
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black text-xs rounded opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 whitespace-nowrap">
+        Tooltip Text
+      </div>
+    </div>
+);
+
+// AvatarGroupHover
+export const AvatarGroupHover = () => (
+    <div className="flex -space-x-2 hover:space-x-1 transition-all duration-300">
+      <div className="w-8 h-8 rounded-full bg-red-500 border-2 border-black" />
+      <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-black" />
+      <div className="w-8 h-8 rounded-full bg-green-500 border-2 border-black" />
+    </div>
+);
+
+// MoreMenuDots
+export const MoreMenuDots = () => (
+    <div className="flex gap-1 cursor-pointer p-2 rounded hover:bg-zinc-800 group">
+      <div className="w-1 h-1 bg-zinc-400 rounded-full group-hover:bg-white" />
+      <div className="w-1 h-1 bg-zinc-400 rounded-full group-hover:bg-white" />
+      <div className="w-1 h-1 bg-zinc-400 rounded-full group-hover:bg-white" />
+    </div>
+);
+
+// PinToggleSwitch
+export const PinToggleSwitch = () => (
+    <div className="w-6 h-6 border border-zinc-600 rounded flex items-center justify-center cursor-pointer hover:bg-zinc-800 group active:scale-90 transition-transform">
+      <span className="text-zinc-500 group-hover:text-white transition-colors">📌</span>
+    </div>
+);
+
+// ColorSwatchSelect
+export const ColorSwatchSelect = () => (
+    <div className="flex gap-2">
+      <div className="w-6 h-6 bg-red-500 rounded-full cursor-pointer hover:ring-2 ring-offset-2 ring-offset-black ring-red-500 transition-all" />
+      <div className="w-6 h-6 bg-blue-500 rounded-full cursor-pointer hover:ring-2 ring-offset-2 ring-offset-black ring-blue-500 transition-all" />
+    </div>
+);
